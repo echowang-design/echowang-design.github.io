@@ -7,49 +7,65 @@ const platformer = document.getElementById('platformer');
 const worldAvatar = document.getElementById('worldAvatar');
 const contentPanel = document.getElementById('contentPanel');
 const panelInner = document.getElementById('panelInner');
-const closePanel = document.getElementById('closePanel');
 const menuButton = document.getElementById('menuButton');
 const menuPanel = document.getElementById('menuPanel');
 const menuHome = document.getElementById('menuHome');
 const hudStatus = document.getElementById('hudStatus');
 const interactionHint = document.getElementById('interactionHint');
 
+const placeholderImages = {
+  tokyo: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1864630/extras/img2.png',
+  yuyu: 'https://cdn.akamai.steamstatic.com/store_item_assets/steam/apps/700520/ss_e22024f5ccba8e254542b5336fd4a78e9a6a21e8.1920x1080.jpg',
+  game: 'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1864630/extras/img2.png',
+  marketing: 'https://cdn.akamai.steamstatic.com/store_item_assets/steam/apps/700520/ss_e22024f5ccba8e254542b5336fd4a78e9a6a21e8.1920x1080.jpg'
+};
+
 const panels = {
-  selected: {
-    kicker: '01 / SELECTED PROJECTS', title: 'Selected<br>Projects',
-    intro: 'A selection of publishing and game visual projects. The first version focuses on complete project stories rather than isolated design categories.',
+  tokyo: {
+    kicker: '01 / TOKYO GHOUL', title: 'Tokyo<br>Ghoul',
+    intro: 'European publishing visual system covering KV, campaign pages, banners, store assets, pre-registration, official website and offline materials.',
     cards: [
-      ['01','Tokyo Ghoul','European Publishing','IP publishing / KV / campaign pages / banners / store assets / pre-registration / official website / offline materials'],
-      ['02','Yu Yu Hakusho','Publishing Visual','IP publishing / KV / campaign visuals / banners / store assets / pre-registration'],
-      ['03','Selected Game Project','Coming soon','A complete game visual case study will be added here.'],
-      ['04','Selected Game Project','Coming soon','Process and final work will be presented as a visual case study.']
-    ]
+      ['01','Key Visual','Campaign lead','Main launch KV and visual composition.'],
+      ['02','Campaign Pages','Publishing','Campaign / activity pages and promotional layouts.'],
+      ['03','Store & Pre-registration','Product presentation','Store images, pre-registration materials and official web assets.'],
+      ['04','Offline / Regional','European publishing','Regional promotional materials and offline applications.']
+    ], image: placeholderImages.tokyo
+  },
+  yuyu: {
+    kicker: '02 / YU YU HAKUSHO', title: 'Yu Yu<br>Hakusho',
+    intro: 'IP publishing visual work across key campaign touchpoints, from KV and banners to store and pre-registration materials.',
+    cards: [
+      ['01','Key Visual','Campaign lead','Main promotional KV and composition.'],
+      ['02','Banners','Campaign communication','Digital banners and promotional variations.'],
+      ['03','Store Assets','Product presentation','Store visuals and launch materials.'],
+      ['04','Pre-registration','Publishing','Pre-registration page and supporting assets.']
+    ], image: placeholderImages.yuyu
   },
   game: {
-    kicker: '02 / GAME VISUAL', title: 'Game<br>Visual',
-    intro: 'Seven years across game publishing and visual production, covering the major visual touchpoints around a game launch and live operation.',
+    kicker: '03 / GAME VISUAL', title: 'Game<br>Visual',
+    intro: 'Selected game visual work beyond the two IP hero cases, presented by project rather than isolated deliverable type.',
     cards: [
-      ['01','Character','Design & development','Original character design, visual exploration and presentation.'],
-      ['02','Key Visual','Campaign communication','KVs and promotional compositions designed around the core message.'],
-      ['03','Logo / Icon','Brand language','Game logos, event marks, icons and supporting visual assets.'],
-      ['04','Web / Store','Product presentation','Pre-registration pages, official websites, store images and campaign pages.']
-    ]
+      ['01','Game Project A','Selected work','Character, KV, logo, icons and web assets.'],
+      ['02','Game Project B','Selected work','Publishing visual system and campaign materials.'],
+      ['03','Game Project C','Selected work','A complete game visual case study will be added here.'],
+      ['04','Earlier Work','Selected work','Additional project work will be added as the archive is organized.']
+    ], image: placeholderImages.game
   },
   marketing: {
-    kicker: '03 / MARKETING + UA', title: 'Marketing<br>/ UA',
-    intro: 'Performance-oriented creative work developed alongside publishing visual production. This section is intentionally secondary to the game visual work.',
+    kicker: '04 / MARKETING + UA', title: 'Marketing<br>/ UA',
+    intro: 'Performance-oriented creative work developed alongside publishing visual production. This section remains secondary to the core game visual work.',
     cards: [
       ['01','Ad Creative','Performance campaigns','Static advertising creatives for user acquisition.'],
       ['02','Creative Testing','Variation & iteration','Different compositions, hooks and visual treatments for campaign testing.'],
       ['03','Campaign Visual','Marketing support','Visual assets connecting publishing campaigns with acquisition needs.']
-    ]
+    ], image: placeholderImages.marketing
   },
   about: {
-    kicker: '04 / ABOUT ME', title: 'About<br>Echo',
+    kicker: '05 / ABOUT ME', title: 'About<br>Echo',
     intro: 'Game Visual Designer with 7 years in game industry, specializing in publishing, IP campaigns and game marketing.', about: true
   },
   lab: {
-    kicker: '05 / LAB', title: 'Lab',
+    kicker: '06 / LAB', title: 'Lab',
     intro: 'The space for experiments outside the day-to-day production pipeline.', lab: true
   }
 };
@@ -64,6 +80,7 @@ function showHome() {
 }
 
 function openWorld() {
+  closePanelNow();
   introScreen.style.display = 'none';
   portfolioWorld.classList.add('active');
   portfolioWorld.setAttribute('aria-hidden', 'false');
@@ -79,9 +96,10 @@ function closePanelNow() {
   interactionHint.textContent = '← → MOVE   SPACE JUMP';
 }
 
-function makeCards(cards) {
+function makeCards(cards, image) {
   return '<div class="project-grid">' + cards.map(c => `
     <article class="project-card">
+      <div class="card-image"><img src="${image || ''}" alt="Temporary portfolio image placeholder" loading="lazy"><span>TEMP IMAGE / REPLACE WITH WORK</span></div>
       <div><div class="number">${c[0]}</div><h3>${c[1]}</h3><p>${c[2]}</p></div>
       <div><p>${c[3]}</p><div class="tag">CASE STUDY / PLACEHOLDER</div></div>
     </article>`).join('') + '</div>';
@@ -95,7 +113,7 @@ function renderPanel(section) {
   } else if (d.lab) {
     html += `<div class="lab-note"><strong>Currently building.</strong><p>Godot experiments, AI-assisted game development, interactive portfolio experiments and independent game prototypes will live here.</p></div><div class="project-grid"><article class="project-card"><div><div class="number">01</div><h3>Godot</h3><p>Learning systems, coding logic and debugging.</p></div><div class="tag">IN PROGRESS</div></article><article class="project-card"><div><div class="number">02</div><h3>AI Workflow</h3><p>Exploring practical AI-assisted workflows for visual and game production.</p></div><div class="tag">IN PROGRESS</div></article></div>`;
   } else {
-    html += makeCards(d.cards);
+    html += makeCards(d.cards, d.image);
   }
   panelInner.innerHTML = html;
   contentPanel.classList.add('active');
@@ -106,11 +124,12 @@ function renderPanel(section) {
 }
 
 const sections = [
-  { id: 'selected', x: 900 },
-  { id: 'game', x: 2200 },
-  { id: 'marketing', x: 3650 },
-  { id: 'about', x: 5100 },
-  { id: 'lab', x: 6550 }
+  { id: 'tokyo', x: 900 },
+  { id: 'yuyu', x: 2100 },
+  { id: 'game', x: 3300 },
+  { id: 'marketing', x: 4500 },
+  { id: 'about', x: 5700 },
+  { id: 'lab', x: 6900 }
 ];
 
 let player = { x: 260, y: 0, vx: 0, vy: 0, grounded: true };
@@ -144,7 +163,7 @@ function openNearest() {
 function updatePlayer(dt) {
   const left = keys.ArrowLeft || keys.a || keys.A;
   const right = keys.ArrowRight || keys.d || keys.D;
-  const wantJump = keys.Space;
+  const wantJump = keys.Space || keys[' '];
   const direction = (right ? 1 : 0) - (left ? 1 : 0);
 
   player.vx += direction * 1900 * dt;
@@ -195,7 +214,6 @@ function loop(now) {
 startButton.addEventListener('click', openWorld);
 homeButton.addEventListener('click', showHome);
 worldButton.addEventListener('click', openWorld);
-closePanel.addEventListener('click', closePanelNow);
 menuButton.addEventListener('click', () => menuPanel.classList.toggle('active'));
 menuHome.addEventListener('click', showHome);
 
@@ -220,6 +238,7 @@ document.querySelectorAll('.world-sign').forEach(sign => {
 
 document.addEventListener('keydown', e => {
   keys[e.key] = true;
+  if (e.code === 'Space') keys.Space = true;
   if (e.key === 'Escape') {
     if (contentPanel.classList.contains('active')) closePanelNow();
     else if (menuPanel.classList.contains('active')) menuPanel.classList.remove('active');
@@ -227,7 +246,7 @@ document.addEventListener('keydown', e => {
   if (e.key.toLowerCase() === 'e' && portfolioWorld.classList.contains('active') && !contentPanel.classList.contains('active')) openNearest();
   if (['ArrowLeft','ArrowRight','ArrowUp','Space'].includes(e.key)) e.preventDefault();
 });
-document.addEventListener('keyup', e => { keys[e.key] = false; });
+document.addEventListener('keyup', e => { keys[e.key] = false; if (e.code === 'Space') keys.Space = false; });
 
 document.querySelectorAll('.mobile-controls button').forEach(button => {
   const action = button.dataset.control;
