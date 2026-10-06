@@ -1,1 +1,98 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Echo Wang — Game Visual Designer portfolio"><title>Echo Wang — Game Visual Designer</title><link rel="stylesheet" href="style.css"></head><body><div class="noise"></div><header class="topbar"><div class="brand">ECHO WANG</div><button class="menu-button" id="menuButton">MENU</button></header><main><section class="intro-screen" id="introScreen"><div class="intro-copy"><p class="eyebrow">GAME VISUAL DESIGNER / 07 YEARS</p><h1>Hi, I'm Echo.</h1><p class="intro-text">Game Visual Designer with 7 years in game industry, specializing in publishing, IP campaigns and game marketing.</p><button class="start-button" id="startButton">ENTER MY WORLD <span>→</span></button></div><div class="avatar-stage"><div class="avatar-shadow"></div><div class="avatar"><i class="hair"></i><i class="face"><b class="eye left"></b><b class="eye right"></b></i><i class="neck"></i><i class="shirt"></i><i class="shorts"></i><i class="leg left"></i><i class="leg right"></i><i class="shoe left"></i><i class="shoe right"></i></div></div></section><section class="portfolio-world" id="portfolioWorld" aria-hidden="true"><div class="world-copy"><p class="eyebrow">WELCOME</p><h2>Take a walk.</h2><p>Choose a place. Echo will lead you there.</p></div><div class="map"><div class="path path-1"></div><div class="path path-2"></div><button class="location-card selected-projects" data-section="selected"><span class="pin">01</span><span class="location-title">SELECTED<br>PROJECTS</span><span class="location-sub">Hero cases</span></button><button class="location-card game-visual" data-section="game"><span class="pin">02</span><span class="location-title">GAME<br>VISUAL</span><span class="location-sub">Projects & craft</span></button><button class="location-card marketing" data-section="marketing"><span class="pin">03</span><span class="location-title">MARKETING<br>/ UA</span><span class="location-sub">Creative & campaigns</span></button><button class="location-card about" data-section="about"><span class="pin">04</span><span class="location-title">ABOUT<br>ME</span><span class="location-sub">Experience</span></button><button class="location-card lab" data-section="lab"><span class="pin">05</span><span class="location-title">LAB</span><span class="location-sub">Godot / AI / Indie</span></button><div class="world-avatar" id="worldAvatar"><div class="avatar mini"><i class="hair"></i><i class="face"><b class="eye left"></b><b class="eye right"></b></i><i class="neck"></i><i class="shirt"></i><i class="shorts"></i><i class="leg left"></i><i class="leg right"></i><i class="shoe left"></i><i class="shoe right"></i></div></div></div><div class="content-panel" id="contentPanel" aria-hidden="true"><button class="close-panel" id="closePanel">CLOSE ×</button><div class="panel-inner" id="panelInner"></div></div></section></main><nav class="menu-panel" id="menuPanel" aria-hidden="true"><button data-jump="selected">SELECTED PROJECTS</button><button data-jump="game">GAME VISUAL</button><button data-jump="marketing">MARKETING / UA</button><button data-jump="about">ABOUT ME</button><button data-jump="lab">LAB</button></nav><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Echo Wang — Game Visual Designer portfolio">
+  <title>Echo Wang — Game Visual Designer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar" id="topbar">
+    <button class="brand" id="homeButton" aria-label="Go home">ECHO WANG</button>
+    <div class="top-actions">
+      <button class="world-button" id="worldButton">WORLD</button>
+      <button class="menu-button" id="menuButton">MENU</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-screen" id="introScreen">
+      <div class="intro-copy">
+        <p class="eyebrow">GAME VISUAL DESIGNER / 07 YEARS</p>
+        <h1>Hi, I'm Echo.</h1>
+        <p class="intro-text">Game Visual Designer with 7 years in game industry, specializing in publishing, IP campaigns and game marketing.</p>
+        <button class="start-button" id="startButton">ENTER MY WORLD <span>→</span></button>
+      </div>
+      <div class="avatar-stage" aria-hidden="true">
+        <div class="avatar-shadow"></div>
+        <div class="avatar">
+          <i class="hair"></i><i class="face"><b class="eye left"></b><b class="eye right"></b></i><i class="neck"></i><i class="shirt"></i><i class="shorts"></i><i class="leg left"></i><i class="leg right"></i><i class="shoe left"></i><i class="shoe right"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-world" id="portfolioWorld" aria-hidden="true">
+      <div class="world-hud">
+        <div>
+          <p class="eyebrow">ECHO WORLD / SIDE-SCROLLING PORTFOLIO</p>
+          <h2>Take a walk.</h2>
+          <p>Move with <kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd>. Jump with <kbd>Space</kbd>. Walk to a project and press <kbd>E</kbd> to enter.</p>
+        </div>
+        <div class="hud-status" id="hudStatus">READY</div>
+      </div>
+
+      <div class="platformer" id="platformer" tabindex="0" aria-label="Interactive portfolio world">
+        <div class="skyline far"></div>
+        <div class="skyline near"></div>
+        <div class="moon"></div>
+        <div class="ground-line"></div>
+
+        <div class="platform platform-a"></div>
+        <div class="platform platform-b"></div>
+        <div class="platform platform-c"></div>
+        <div class="platform platform-d"></div>
+
+        <div class="world-sign sign-selected" data-section="selected"><span>01</span><strong>TOKYO GHOUL</strong><small>SELECTED PROJECT</small></div>
+        <div class="world-sign sign-game" data-section="game"><span>02</span><strong>GAME VISUAL</strong><small>PROJECTS & CRAFT</small></div>
+        <div class="world-sign sign-marketing" data-section="marketing"><span>03</span><strong>MARKETING / UA</strong><small>CAMPAIGNS</small></div>
+        <div class="world-sign sign-about" data-section="about"><span>04</span><strong>ABOUT ECHO</strong><small>EXPERIENCE</small></div>
+        <div class="world-sign sign-lab" data-section="lab"><span>05</span><strong>LAB</strong><small>GODOT / AI / INDIE</small></div>
+
+        <div class="project-placeholder placeholder-tokyo" aria-hidden="true">
+          <img src="https://cdn.akamai.steamstatic.com/store_item_assets/steam/apps/700520/ss_e22024f5ccba8e254542b5336fd4a78e9a6a21e8.1920x1080.jpg" alt="Temporary monochrome platformer placeholder">
+        </div>
+        <div class="project-placeholder placeholder-city" aria-hidden="true">
+          <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1864630/extras/img2.png" alt="Temporary monochrome city placeholder">
+        </div>
+
+        <div class="world-avatar" id="worldAvatar" aria-label="Echo character">
+          <div class="avatar mini"><i class="hair"></i><i class="face"><b class="eye left"></b><b class="eye right"></b></i><i class="neck"></i><i class="shirt"></i><i class="shorts"></i><i class="leg left"></i><i class="leg right"></i><i class="shoe left"></i><i class="shoe right"></i></div>
+        </div>
+        <div class="interaction-hint" id="interactionHint">← → MOVE&nbsp;&nbsp; SPACE JUMP</div>
+      </div>
+
+      <div class="mobile-controls" aria-label="Mobile controls">
+        <button data-control="left">←</button><button data-control="jump">↑</button><button data-control="right">→</button>
+      </div>
+
+      <div class="content-panel" id="contentPanel" aria-hidden="true">
+        <button class="close-panel" id="closePanel">CLOSE ×</button>
+        <div class="panel-inner" id="panelInner"></div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="menu-panel" id="menuPanel" aria-hidden="true">
+    <button data-jump="selected">SELECTED PROJECTS</button>
+    <button data-jump="game">GAME VISUAL</button>
+    <button data-jump="marketing">MARKETING / UA</button>
+    <button data-jump="about">ABOUT ME</button>
+    <button data-jump="lab">LAB</button>
+    <button id="menuHome">HOME</button>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
