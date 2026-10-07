@@ -1,104 +1,18 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#e9e8e4">
-<meta name="description" content="Echo Wang — Game Visual Designer portfolio.">
-<title>Echo Wang — Game Visual Designer</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="site-noise" aria-hidden="true"></div>
-<header class="topbar">
-  <button class="brand" id="brandHome" aria-label="Home">ECHO WANG</button>
-  <div class="top-right">
-    <button class="top-link" id="worldBtn">WORLD</button>
-    <button class="top-link" id="projectsBtn">PROJECTS</button>
-    <button class="top-link" id="aboutBtn">ABOUT</button>
-    <div class="language-switcher">
-      <button class="lang-button" id="langButton" aria-expanded="false">中 <span>⌄</span></button>
-      <div class="lang-menu" id="langMenu">
-        <button data-lang="zh-CN">简体中文</button>
-        <button data-lang="zh-TW">繁體中文</button>
-        <button data-lang="en">English</button>
-        <button data-lang="ko">한국어</button>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main>
-<section class="intro" id="intro">
-  <div class="intro-copy">
-    <p class="eyebrow" data-i18n="intro.eyebrow">GAME VISUAL DESIGNER / 2019—NOW</p>
-    <h1><span>Echo</span><br><em>Wang</em></h1>
-    <p class="intro-sub" data-i18n="intro.sub">Game visual design, publishing and IP campaigns.</p>
-    <div class="intro-actions">
-      <button class="primary-button" id="enterBtn"><span data-i18n="intro.enterWorld">ENTER MY WORLD</span><b>↗</b></button>
-      <button class="text-button" id="browseBtn" data-i18n="intro.browse">BROWSE WORK</button>
-    </div>
-    <p class="micro" data-i18n="intro.micro">A playable portfolio by Echo Wang.</p>
-  </div>
-  <div class="hero-character" aria-hidden="true">
-    <div class="hero-glow"></div>
-    <img src="assets/character/front.png" alt="">
-    <div class="hero-caption"><span>01</span><span>ECHO / PLAYER</span></div>
-  </div>
-  <div class="intro-rule" aria-hidden="true"><span></span><i></i><span></span></div>
-</section>
-
-<section class="game" id="game" aria-hidden="true">
-  <div class="game-topbar">
-    <div>
-      <p class="eyebrow">ECHO WORLD / PORTFOLIO GAME</p>
-      <p class="game-title" data-i18n="game.title">Walk through my work.</p>
-    </div>
-    <div class="game-actions">
-      <button id="mapBtn" data-i18n="nav.projects">PROJECTS</button>
-      <button id="gameAboutBtn" data-i18n="nav.about">ABOUT</button>
-    </div>
-  </div>
-  <div class="game-viewport" id="gameViewport" tabindex="0" aria-label="Interactive portfolio world">
-    <div class="world-track" id="worldTrack">
-      <div class="world-background" id="worldBackground" aria-hidden="true"></div>
-      <div class="world-vignette" aria-hidden="true"></div>
-      <div class="world-clouds" aria-hidden="true"></div>
-      <div class="ground-shadow" aria-hidden="true"></div>
-      <div class="platforms" id="platforms"></div>
-      <div class="portals" id="portals"></div>
-      <div class="world-player" id="player" aria-label="Echo">
-        <img src="assets/character/side.png" alt="">
-        <span class="player-shadow"></span>
-      </div>
-    </div>
-    <div class="world-ui">
-      <div class="progress"><span id="progressFill"></span></div>
-      <div class="world-hint" id="worldHint">← → / A D &nbsp; · &nbsp; SPACE &nbsp; · &nbsp; E</div>
-      <div class="near-hint" id="nearHint"><span>ENTER</span></div>
-    </div>
-    <div class="mobile-controls" aria-label="Mobile controls">
-      <button data-control="left" aria-label="Move left">←</button>
-      <button data-control="jump" aria-label="Jump">↑</button>
-      <button data-control="right" aria-label="Move right">→</button>
-    </div>
-    <div class="touch-note" data-i18n="game.mobile">Swipe to explore · tap a portal</div>
-  </div>
-</section>
-</main>
-
-<aside class="panel" id="panel" aria-hidden="true">
-  <div class="panel-backdrop" data-close></div>
-  <div class="panel-sheet">
-    <div class="panel-head">
-      <div><p class="panel-index" id="panelIndex">01 / SELECTED</p><p class="panel-location" id="panelLocation">ECHO WORLD</p></div>
-      <button class="close" data-close>ESC <span>×</span></button>
-    </div>
-    <div class="panel-scroll" id="panelContent"></div>
-  </div>
-</aside>
-
-<div class="toast" id="toast"></div>
-<script src="script.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Echo Wang — Game Visual Designer</title><link rel="stylesheet" href="style.css"></head><body>
+<div id="app">
+<header class="topbar"><button class="brand" id="homeBtn">ECHO WANG</button><div class="top-actions"><button id="worldBtn">WORLD</button><button id="menuBtn">MENU</button></div></header>
+<section id="home" class="screen home"><div class="home-copy"><div class="eyebrow">GAME VISUAL DESIGNER / 07 YEARS</div><h1>Hi, I'm Echo.</h1><p>Game Visual Designer with 7 years in game industry,<br>specializing in publishing, IP campaigns and game marketing.</p><button class="primary" id="enterBtn">ENTER MY WORLD →</button></div><div class="home-mark">E<br>W</div></section>
+<section id="world" class="screen world hidden"><div class="world-head"><span>ECHO WORLD</span><span>RUN / EXPLORE / VIEW WORK</span></div><div class="hint">← → / A D move &nbsp;·&nbsp; SPACE jump &nbsp;·&nbsp; E enter nearby work</div><div id="worldStage"><div class="world-bg"></div><div id="player"><div class="player-head"></div><div class="player-body"></div><div class="player-legs"></div></div><div id="worldItems"></div><div class="ground"></div></div><div class="mobile-controls"><button data-key="left">←</button><button data-key="jump">↑</button><button data-key="right">→</button><button data-key="enter">E</button></div></section>
+<section id="detail" class="detail hidden"><div class="detail-inner"><div class="detail-nav"><button id="backWorld" class="back">← BACK TO WORLD</button><span id="detailIndex"></span></div><div class="detail-title"><div class="eyebrow" id="detailEyebrow"></div><h2 id="detailTitle"></h2><p id="detailDesc"></p></div><div id="detailGallery" class="gallery"></div></div></section>
+<section id="about" class="detail hidden"><div class="detail-inner simple"><div class="detail-nav"><button class="back genericBack">← BACK TO WORLD</button></div><div class="eyebrow">ABOUT ECHO</div><h2>Game Visual Designer</h2><p class="lead">7 years across game publishing, IP campaigns, game marketing and visual production.</p><div class="about-grid"><div><span>EXPERIENCE</span><p>Game publishing visuals<br>IP campaigns<br>Marketing / UA creatives<br>2 years of team lead experience</p></div><div><span>FOCUS</span><p>Visual systems<br>Campaigns & launch assets<br>Character / KV / web / store visuals</p></div><div><span>NEXT</span><p>Independent game making<br>Godot / AI-assisted workflow<br>Interactive portfolio experiments</p></div></div></div></section>
+<section id="lab" class="detail hidden"><div class="detail-inner simple"><div class="detail-nav"><button class="back genericBack">← BACK TO WORLD</button></div><div class="eyebrow">LAB</div><h2>Experiments in progress.</h2><p class="lead">Godot, AI-assisted game making and interactive web experiments will live here.</p></div></section>
+<div id="menu" class="menu hidden"><button class="menu-close" id="menuClose">×</button><div class="menu-inner"><button data-menu="home">HOME</button><button data-menu="world">WORLD</button><button data-menu="about">ABOUT</button><button data-menu="lab">LAB</button></div></div>
+</div>
+<script>window.PROJECTS={
+"tokyo":{"title":"TOKYO GHOUL","cn":"东京喰种","desc":"IP Publishing / Game Visual","cover":"assets/tokyo/01_-_-02.jpg","images":["assets/tokyo/01_-_-02.jpg","assets/tokyo/02_-_-05.jpg","assets/tokyo/03_PC_1.jpg","assets/tokyo/04_H5_1.jpg","assets/tokyo/05_-_-04.jpg","assets/tokyo/06_-_-01_K.jpg","assets/tokyo/07_-_-03.jpg","assets/tokyo/08_-_-06.jpg"]},
+"yuyu":{"title":"YU YU HAKUSHO","cn":"幽游白书","desc":"IP Publishing / Game Visual","cover":"assets/yuyu/01_07-.jpg","images":["assets/yuyu/01_07-.jpg","assets/yuyu/02_05-.jpg","assets/yuyu/03_04-.jpg","assets/yuyu/04_-_-_04.jpg","assets/yuyu/05_02-_-.jpg","assets/yuyu/06_-_-_06.jpg","assets/yuyu/07_H5-.jpg","assets/yuyu/08_03-.jpg","assets/yuyu/09_01-.jpg","assets/yuyu/10_-_-_01.jpg","assets/yuyu/11_-_-_05.jpg","assets/yuyu/12_PC-.jpg","assets/yuyu/13_-_-_03.jpg","assets/yuyu/14_-_-_02.jpg","assets/yuyu/15_06-.jpg"]},
+"youyan":{"title":"YOUYAN GAMES","cn":"游雁游戏","desc":"Selected Projects / Game Visual","cover":"assets/youyan/01_asset.jpg","images":["assets/youyan/01_asset.jpg","assets/youyan/02_asset.jpg"],"longDesc":"A selected set of game visual work from Youyan Games. The portfolio treats the company as a project collection rather than mixing the company name with individual game titles."},
+"tianyou":{"title":"TIANYOU GAMES","cn":"天游游戏","desc":"Selected Projects / Game Visual","cover":"assets/tianyou/01_00.jpg","images":["assets/tianyou/01_00.jpg","assets/tianyou/02_04.jpg","assets/tianyou/03_03.jpg","assets/tianyou/04_06.jpg","assets/tianyou/05_05.jpg","assets/tianyou/06_01.jpg","assets/tianyou/07_02.jpg"],"longDesc":"A selected set of game visual work from Tianyou Games."},
+"tencent":{"title":"START CLOUD GAMING","cn":"腾讯 START 云游戏","desc":"Campaign / Brand / Game Visual","cover":"assets/tencent/01_-PC.jpg","images":["assets/tencent/01_-PC.jpg","assets/tencent/02_-PC.jpg","assets/tencent/03_13-.jpg"]},
+"archive":{"title":"OTHERS","cn":"其他作品","desc":"Earlier Work / Selected Visuals","cover":"assets/archive/01_-_-_-EN.jpg","images":["assets/archive/01_-_-_-EN.jpg","assets/archive/02_KK-_-lyn.jpg","assets/archive/03_KK-_-FoCuS.jpg","assets/archive/04_KK-_-LawLiet.jpg","assets/archive/05_KK-_-ReminD.jpg","assets/archive/06_KK-_-_K.jpg","assets/archive/07_-KV.jpg","assets/archive/08_1-.jpg","assets/archive/09_8.jpg","assets/archive/10_7.jpg","assets/archive/11_2.jpg","assets/archive/12_3.jpg","assets/archive/13_5.jpg","assets/archive/14_6.jpg","assets/archive/15_4.jpg"]}
+};</script><script src="script.js"></script></body></html>
