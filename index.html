@@ -1,171 +1,104 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#11110f">
-  <meta name="description" content="Echo Wang — Game Visual Designer portfolio. Explore selected game publishing, IP and campaign work through a surreal side-scrolling world.">
-  <title>Echo Wang — Portfolio World</title>
-  <link rel="icon" href="assets/character/front.png">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#e9e8e4">
+<meta name="description" content="Echo Wang — Game Visual Designer portfolio.">
+<title>Echo Wang — Game Visual Designer</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-
-  <header class="topbar">
-    <button class="brand" id="brandHome" aria-label="Return to world">
-      <span class="brand-dot"></span>
-      <span>ECHO WANG</span>
-      <small>PORTFOLIO WORLD / V0.7</small>
-    </button>
-    <div class="top-actions">
-      <button class="text-btn" data-open="projects" data-i18n="nav.projects">PROJECTS</button>
-      <button class="text-btn" data-open="about" data-i18n="nav.about">ABOUT</button>
-      <div class="language-switcher">
-        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">中 <span>⌄</span></button>
-        <div class="lang-menu" id="langMenu" role="listbox">
-          <button data-lang="zh-CN" role="option">简体中文</button>
-          <button data-lang="zh-TW" role="option">繁體中文</button>
-          <button data-lang="en" role="option">English</button>
-          <button data-lang="ko" role="option">한국어</button>
-        </div>
+<div class="site-noise" aria-hidden="true"></div>
+<header class="topbar">
+  <button class="brand" id="brandHome" aria-label="Home">ECHO WANG</button>
+  <div class="top-right">
+    <button class="top-link" id="worldBtn">WORLD</button>
+    <button class="top-link" id="projectsBtn">PROJECTS</button>
+    <button class="top-link" id="aboutBtn">ABOUT</button>
+    <div class="language-switcher">
+      <button class="lang-button" id="langButton" aria-expanded="false">中 <span>⌄</span></button>
+      <div class="lang-menu" id="langMenu">
+        <button data-lang="zh-CN">简体中文</button>
+        <button data-lang="zh-TW">繁體中文</button>
+        <button data-lang="en">English</button>
+        <button data-lang="ko">한국어</button>
       </div>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main id="world">
-    <section class="intro" id="intro">
-      <div class="intro-copy">
-        <p class="eyebrow" data-i18n="intro.eyebrow">GAME VISUAL DESIGNER / 2019—NOW</p>
-        <p class="intro-name">Echo Wang</p>
-        <h1><span data-i18n="intro.enter">ENTER</span><br><em>ECHO</em><br><span data-i18n="intro.world">WORLD.</span></h1>
-        <p class="intro-sub" data-i18n="intro.sub">A portfolio disguised as a small surreal platform game.</p>
-        <div class="intro-actions">
-          <button class="primary" id="enterBtn"><span data-i18n="intro.enterWorld">ENTER WORLD</span> <span>→</span></button>
-          <button class="ghost" data-open="projects" data-i18n="intro.browse">BROWSE WORK</button>
-        </div>
-        <p class="hint desktop-hint" data-i18n="intro.desktopHint">WASD / ← → to move · E to enter · SPACE to jump</p>
-        <p class="hint mobile-hint" data-i18n="intro.mobileHint">Swipe the world · tap a portal to inspect</p>
-      </div>
-      <div class="intro-portrait" aria-hidden="true">
-        <div class="portrait-orbit orbit-a"></div>
-        <div class="portrait-orbit orbit-b"></div>
-        <div class="portrait-glow"></div>
-        <img src="assets/character/front.png" alt="Echo Wang avatar">
-        <div class="portrait-label"><span>ECHO WANG</span><small>GAME VISUAL DESIGNER</small></div>
-      </div>
-    </section>
-
-    <section class="game" id="game" aria-label="Echo World">
-      <div class="game-sky"></div>
-      <div class="world-layer" id="worldLayer">
-        <div class="dali-shape shape-one"></div>
-        <div class="dali-shape shape-two"></div>
-        <div class="dali-shape shape-three"></div>
-
-        <div class="world-title">
-          <span>01</span>
-          <strong>ECHO<br>WORLD</strong>
-          <small>CAREER TIMELINE</small>
-        </div>
-
-        <div class="era-marker era-1">
-          <span>2025—NOW</span>
-          <b>广州游雁游戏</b>
-          <small>LEAD / SYSTEM</small>
-        </div>
-        <div class="era-marker era-2">
-          <span>2024—2025</span>
-          <b>广州胡莱游戏</b>
-          <small>IP / PUBLISHING</small>
-        </div>
-        <div class="era-marker era-3">
-          <span>2024</span>
-          <b>广州天游网络</b>
-          <small>IP / PRODUCT</small>
-        </div>
-        <div class="era-marker era-4">
-          <span>2022—2023</span>
-          <b>广州香蕉互娱</b>
-          <small>GAME PUBLISHING</small>
-        </div>
-        <div class="era-marker era-5">
-          <span>2020—2022</span>
-          <b>腾讯 START</b>
-          <small>BRAND / PRODUCT</small>
-        </div>
-        <div class="era-marker era-6">
-          <span>2019—2020</span>
-          <b>深圳玖作文化</b>
-          <small>FOUNDATION</small>
-        </div>
-
-        <div class="platform p1"></div><div class="platform p2"></div><div class="platform p3"></div>
-        <div class="platform p4"></div><div class="platform p5"></div><div class="platform p6"></div>
-
-        <button class="portal current featured" style="--x:8%" data-project="youyan">
-          <span class="portal-ring"></span><b>01</b><strong>YOUYAN</strong><small>VISUAL LEAD</small>
-        </button>
-        <button class="portal featured" style="--x:24%" data-project="tokyo">
-          <span class="portal-ring"></span><b>02</b><strong>TOKYO GHOUL</strong><small>IP CAMPAIGN</small>
-        </button>
-        <button class="portal featured" style="--x:39%" data-project="yuyu">
-          <span class="portal-ring"></span><b>03</b><strong>YU YU HAKUSHO</strong><small>IP CAMPAIGN</small>
-        </button>
-        <button class="portal featured" style="--x:54%" data-project="fatxiyou">
-          <span class="portal-ring"></span><b>04</b><strong>胖西游</strong><small>PRODUCT VISUAL</small>
-        </button>
-        <button class="portal" style="--x:69%" data-project="banana">
-          <span class="portal-ring"></span><b>05</b><strong>DIGITAL GIRLS</strong><small>PUBLISHING</small>
-        </button>
-        <button class="portal" style="--x:83%" data-project="start">
-          <span class="portal-ring"></span><b>06</b><strong>START</strong><small>CLOUD GAMING</small>
-        </button>
-        <button class="portal" style="--x:96%" data-project="jiuzuo">
-          <span class="portal-ring"></span><b>07</b><strong>FOUNDATION</strong><small>GAME VISUAL</small>
-        </button>
-
-        <div class="future-zone">
-          <span>2025—NOW</span>
-          <h2>THE WORK<br>IS STILL MOVING.</h2>
-          <p>Blue Sky · Xuan Ying · V5 · QV1 · F2</p>
-          <small>Selected case studies will be added as materials are cleared for publication.</small>
-        </div>
-
-        <div class="avatar" id="avatar">
-          <img id="avatarImg" src="assets/character/side.png" alt="Echo avatar">
-          <span class="avatar-shadow"></span>
-        </div>
-
-        <div class="game-floor"></div>
-      </div>
-
-      <div class="game-hud">
-        <div class="hud-title"><span>WORLD 01</span><b>CAREER TIMELINE</b></div>
-        <div class="hud-progress"><i id="progressBar"></i></div>
-        <button class="hud-map" id="mapBtn">MAP</button>
-      </div>
-
-      <div class="mobile-controls" aria-label="Movement controls">
-        <div class="dpad"><button data-move="-1">←</button><button data-move="1">→</button></div>
-        <button class="jump" id="jumpBtn">↑</button>
-      </div>
-      <div class="interaction" id="interaction"><b>E</b><span data-i18n="game.enter">ENTER PROJECT</span></div>
-      <div class="mobile-tip" data-i18n="game.mobileTip">SWIPE TO TRAVEL · TAP A PORTAL</div>
-    </section>
-  </main>
-
-  <aside class="panel" id="panel" aria-hidden="true">
-    <div class="panel-backdrop" data-close></div>
-    <div class="panel-sheet">
-      <button class="close" data-close>×</button>
-      <div id="panelContent"></div>
+<main>
+<section class="intro" id="intro">
+  <div class="intro-copy">
+    <p class="eyebrow" data-i18n="intro.eyebrow">GAME VISUAL DESIGNER / 2019—NOW</p>
+    <h1><span>Echo</span><br><em>Wang</em></h1>
+    <p class="intro-sub" data-i18n="intro.sub">Game visual design, publishing and IP campaigns.</p>
+    <div class="intro-actions">
+      <button class="primary-button" id="enterBtn"><span data-i18n="intro.enterWorld">ENTER MY WORLD</span><b>↗</b></button>
+      <button class="text-button" id="browseBtn" data-i18n="intro.browse">BROWSE WORK</button>
     </div>
-  </aside>
+    <p class="micro" data-i18n="intro.micro">A playable portfolio by Echo Wang.</p>
+  </div>
+  <div class="hero-character" aria-hidden="true">
+    <div class="hero-glow"></div>
+    <img src="assets/character/front.png" alt="">
+    <div class="hero-caption"><span>01</span><span>ECHO / PLAYER</span></div>
+  </div>
+  <div class="intro-rule" aria-hidden="true"><span></span><i></i><span></span></div>
+</section>
 
-  <div class="toast" id="toast"></div>
+<section class="game" id="game" aria-hidden="true">
+  <div class="game-topbar">
+    <div>
+      <p class="eyebrow">ECHO WORLD / PORTFOLIO GAME</p>
+      <p class="game-title" data-i18n="game.title">Walk through my work.</p>
+    </div>
+    <div class="game-actions">
+      <button id="mapBtn" data-i18n="nav.projects">PROJECTS</button>
+      <button id="gameAboutBtn" data-i18n="nav.about">ABOUT</button>
+    </div>
+  </div>
+  <div class="game-viewport" id="gameViewport" tabindex="0" aria-label="Interactive portfolio world">
+    <div class="world-track" id="worldTrack">
+      <div class="world-background" id="worldBackground" aria-hidden="true"></div>
+      <div class="world-vignette" aria-hidden="true"></div>
+      <div class="world-clouds" aria-hidden="true"></div>
+      <div class="ground-shadow" aria-hidden="true"></div>
+      <div class="platforms" id="platforms"></div>
+      <div class="portals" id="portals"></div>
+      <div class="world-player" id="player" aria-label="Echo">
+        <img src="assets/character/side.png" alt="">
+        <span class="player-shadow"></span>
+      </div>
+    </div>
+    <div class="world-ui">
+      <div class="progress"><span id="progressFill"></span></div>
+      <div class="world-hint" id="worldHint">← → / A D &nbsp; · &nbsp; SPACE &nbsp; · &nbsp; E</div>
+      <div class="near-hint" id="nearHint"><span>ENTER</span></div>
+    </div>
+    <div class="mobile-controls" aria-label="Mobile controls">
+      <button data-control="left" aria-label="Move left">←</button>
+      <button data-control="jump" aria-label="Jump">↑</button>
+      <button data-control="right" aria-label="Move right">→</button>
+    </div>
+    <div class="touch-note" data-i18n="game.mobile">Swipe to explore · tap a portal</div>
+  </div>
+</section>
+</main>
 
-  <script src="script.js"></script>
+<aside class="panel" id="panel" aria-hidden="true">
+  <div class="panel-backdrop" data-close></div>
+  <div class="panel-sheet">
+    <div class="panel-head">
+      <div><p class="panel-index" id="panelIndex">01 / SELECTED</p><p class="panel-location" id="panelLocation">ECHO WORLD</p></div>
+      <button class="close" data-close>ESC <span>×</span></button>
+    </div>
+    <div class="panel-scroll" id="panelContent"></div>
+  </div>
+</aside>
+
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
 </body>
 </html>
