@@ -101,7 +101,7 @@ The current resume describes responsibilities well but underuses measurable outc
 
 **V0.5 does NOT invent performance numbers.**
 
-For V0.6+, collect real evidence where disclosure is allowed:
+For V0.7+, collect real evidence where disclosure is allowed:
 
 ### Publishing / UA
 - Number of campaigns / projects owned
@@ -157,7 +157,7 @@ Image assets were resized/optimized for web use. Original source files should re
 
 No domain or GitHub Pages setting needs to be changed for this static package.
 
-## Recommended V0.6 work
+## Recommended V0.7 work
 
 1. Replace placeholder Youyan projects with publishable cases.
 2. Add real project metrics.
@@ -181,3 +181,11 @@ Before publishing, review every image and remove:
 - private contact information
 - client / partner information that is not cleared for publication
 
+
+
+## V0.7 changes
+- Echo Wang is explicitly named on the home screen and the character avatar is visible on the landing screen.
+- Added Simplified Chinese, Traditional Chinese, English and Korean language switching.
+- Typography uses language-specific letter-spacing and line-height variables so CJK, English and Korean do not share a rigid spacing system.
+- Career and project order is Recent → Past.
+- Added an in-world interaction prompt and current-project portal.

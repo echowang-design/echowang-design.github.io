@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -16,11 +16,20 @@
     <button class="brand" id="brandHome" aria-label="Return to world">
       <span class="brand-dot"></span>
       <span>ECHO WANG</span>
-      <small>PORTFOLIO WORLD / V0.5</small>
+      <small>PORTFOLIO WORLD / V0.7</small>
     </button>
     <div class="top-actions">
-      <button class="text-btn" data-open="projects">PROJECTS</button>
-      <button class="text-btn" data-open="about">ABOUT</button>
+      <button class="text-btn" data-open="projects" data-i18n="nav.projects">PROJECTS</button>
+      <button class="text-btn" data-open="about" data-i18n="nav.about">ABOUT</button>
+      <div class="language-switcher">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">中 <span>⌄</span></button>
+        <div class="lang-menu" id="langMenu" role="listbox">
+          <button data-lang="zh-CN" role="option">简体中文</button>
+          <button data-lang="zh-TW" role="option">繁體中文</button>
+          <button data-lang="en" role="option">English</button>
+          <button data-lang="ko" role="option">한국어</button>
+        </div>
+      </div>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
   </header>
@@ -28,20 +37,23 @@
   <main id="world">
     <section class="intro" id="intro">
       <div class="intro-copy">
-        <p class="eyebrow">GAME VISUAL DESIGNER / 2019—NOW</p>
-        <h1>ENTER<br><em>ECHO</em><br>WORLD.</h1>
-        <p class="intro-sub">A portfolio disguised as a small surreal platform game.</p>
+        <p class="eyebrow" data-i18n="intro.eyebrow">GAME VISUAL DESIGNER / 2019—NOW</p>
+        <p class="intro-name">Echo Wang</p>
+        <h1><span data-i18n="intro.enter">ENTER</span><br><em>ECHO</em><br><span data-i18n="intro.world">WORLD.</span></h1>
+        <p class="intro-sub" data-i18n="intro.sub">A portfolio disguised as a small surreal platform game.</p>
         <div class="intro-actions">
-          <button class="primary" id="enterBtn">ENTER WORLD <span>→</span></button>
-          <button class="ghost" data-open="projects">BROWSE WORK</button>
+          <button class="primary" id="enterBtn"><span data-i18n="intro.enterWorld">ENTER WORLD</span> <span>→</span></button>
+          <button class="ghost" data-open="projects" data-i18n="intro.browse">BROWSE WORK</button>
         </div>
-        <p class="hint desktop-hint">WASD / ← → to move · E to enter · SPACE to jump</p>
-        <p class="hint mobile-hint">Swipe the world · tap a portal to inspect</p>
+        <p class="hint desktop-hint" data-i18n="intro.desktopHint">WASD / ← → to move · E to enter · SPACE to jump</p>
+        <p class="hint mobile-hint" data-i18n="intro.mobileHint">Swipe the world · tap a portal to inspect</p>
       </div>
-      <div class="intro-orbit" aria-hidden="true">
-        <div class="orbit orbit-a"></div>
-        <div class="orbit orbit-b"></div>
-        <div class="orbit-card">D / A<br><span>MOVE</span></div>
+      <div class="intro-portrait" aria-hidden="true">
+        <div class="portrait-orbit orbit-a"></div>
+        <div class="portrait-orbit orbit-b"></div>
+        <div class="portrait-glow"></div>
+        <img src="assets/character/front.png" alt="Echo Wang avatar">
+        <div class="portrait-label"><span>ECHO WANG</span><small>GAME VISUAL DESIGNER</small></div>
       </div>
     </section>
 
@@ -59,56 +71,59 @@
         </div>
 
         <div class="era-marker era-1">
-          <span>2019—2020</span>
-          <b>玖作文化</b>
-          <small>FOUNDATION</small>
+          <span>2025—NOW</span>
+          <b>广州游雁游戏</b>
+          <small>LEAD / SYSTEM</small>
         </div>
         <div class="era-marker era-2">
+          <span>2024—2025</span>
+          <b>广州胡莱游戏</b>
+          <small>IP / PUBLISHING</small>
+        </div>
+        <div class="era-marker era-3">
+          <span>2024</span>
+          <b>广州天游网络</b>
+          <small>IP / PRODUCT</small>
+        </div>
+        <div class="era-marker era-4">
+          <span>2022—2023</span>
+          <b>广州香蕉互娱</b>
+          <small>GAME PUBLISHING</small>
+        </div>
+        <div class="era-marker era-5">
           <span>2020—2022</span>
           <b>腾讯 START</b>
           <small>BRAND / PRODUCT</small>
         </div>
-        <div class="era-marker era-3">
-          <span>2022—2023</span>
-          <b>香蕉互娱</b>
-          <small>GAME PUBLISHING</small>
-        </div>
-        <div class="era-marker era-4">
-          <span>2024</span>
-          <b>天游网络</b>
-          <small>IP / PRODUCT</small>
-        </div>
-        <div class="era-marker era-5">
-          <span>2024—2025</span>
-          <b>胡莱游戏</b>
-          <small>IP / PUBLISHING</small>
-        </div>
         <div class="era-marker era-6">
-          <span>2025—NOW</span>
-          <b>游雁游戏</b>
-          <small>LEAD / SYSTEM</small>
+          <span>2019—2020</span>
+          <b>深圳玖作文化</b>
+          <small>FOUNDATION</small>
         </div>
 
         <div class="platform p1"></div><div class="platform p2"></div><div class="platform p3"></div>
         <div class="platform p4"></div><div class="platform p5"></div><div class="platform p6"></div>
 
-        <button class="portal featured" style="--x:11%" data-project="jiuzuo">
-          <span class="portal-ring"></span><b>01</b><strong>FOUNDATION</strong><small>GAME VISUAL</small>
+        <button class="portal current featured" style="--x:8%" data-project="youyan">
+          <span class="portal-ring"></span><b>01</b><strong>YOUYAN</strong><small>VISUAL LEAD</small>
         </button>
-        <button class="portal" style="--x:28%" data-project="start">
-          <span class="portal-ring"></span><b>02</b><strong>START</strong><small>CLOUD GAMING</small>
+        <button class="portal featured" style="--x:24%" data-project="tokyo">
+          <span class="portal-ring"></span><b>02</b><strong>TOKYO GHOUL</strong><small>IP CAMPAIGN</small>
         </button>
-        <button class="portal" style="--x:44%" data-project="banana">
-          <span class="portal-ring"></span><b>03</b><strong>DIGITAL GIRLS</strong><small>PUBLISHING</small>
+        <button class="portal featured" style="--x:39%" data-project="yuyu">
+          <span class="portal-ring"></span><b>03</b><strong>YU YU HAKUSHO</strong><small>IP CAMPAIGN</small>
         </button>
-        <button class="portal" style="--x:59%" data-project="fatxiyou">
+        <button class="portal featured" style="--x:54%" data-project="fatxiyou">
           <span class="portal-ring"></span><b>04</b><strong>胖西游</strong><small>PRODUCT VISUAL</small>
         </button>
-        <button class="portal featured" style="--x:76%" data-project="tokyo">
-          <span class="portal-ring"></span><b>05</b><strong>TOKYO GHOUL</strong><small>IP CAMPAIGN</small>
+        <button class="portal" style="--x:69%" data-project="banana">
+          <span class="portal-ring"></span><b>05</b><strong>DIGITAL GIRLS</strong><small>PUBLISHING</small>
         </button>
-        <button class="portal featured" style="--x:91%" data-project="yuyu">
-          <span class="portal-ring"></span><b>06</b><strong>YU YU HAKUSHO</strong><small>IP CAMPAIGN</small>
+        <button class="portal" style="--x:83%" data-project="start">
+          <span class="portal-ring"></span><b>06</b><strong>START</strong><small>CLOUD GAMING</small>
+        </button>
+        <button class="portal" style="--x:96%" data-project="jiuzuo">
+          <span class="portal-ring"></span><b>07</b><strong>FOUNDATION</strong><small>GAME VISUAL</small>
         </button>
 
         <div class="future-zone">
@@ -136,7 +151,8 @@
         <div class="dpad"><button data-move="-1">←</button><button data-move="1">→</button></div>
         <button class="jump" id="jumpBtn">↑</button>
       </div>
-      <div class="mobile-tip">SWIPE TO TRAVEL · TAP A PORTAL</div>
+      <div class="interaction" id="interaction"><b>E</b><span data-i18n="game.enter">ENTER PROJECT</span></div>
+      <div class="mobile-tip" data-i18n="game.mobileTip">SWIPE TO TRAVEL · TAP A PORTAL</div>
     </section>
   </main>
 
